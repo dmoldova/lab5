@@ -6,7 +6,7 @@ GPIO.setup(11,GPIO.OUT)
 
 while True:
 	for x in range(1,6):
-		GPIO.output(11,True)
+		GPIO.output(11,1)
 		time.sleep(0.5)
-		GPIO.output(11,False)
+		GPIO.output(11,0)
 		time.sleep(0.5)
