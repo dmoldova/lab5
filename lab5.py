@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(13,GPIO.OUT)
+GPIO.setup(11,GPIO.OUT)
 
 #GPIO.setwarnings(False)
 def Main()
@@ -14,4 +14,4 @@ def Main()
 			time.sleep(0.5)
 
 if __name__ == '__main__':
-	Main()
+	Main():
