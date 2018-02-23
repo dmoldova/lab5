@@ -17,6 +17,5 @@ def Main():
 		#		time.sleep(0.5)
 		#		GPIO.output(led,GPIO.LOW)
 		#		time.sleep(0.5)
-
 if __name__ == '__main__':
 	Main()
