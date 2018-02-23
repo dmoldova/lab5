@@ -5,10 +5,13 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(13,GPIO.OUT)
 
 #GPIO.setwarnings(False)
+def Main()
+	while True:
+		for x in range(1,6):
+			GPIO.output(11,1)
+			time.sleep(0.5)
+			GPIO.output(11,0)
+			time.sleep(0.5)
 
-while True:
-	for x in range(1,6):
-		GPIO.output(13,1)
-		time.sleep(0.5)
-		GPIO.output(13,0)
-		time.sleep(0.5)
+if __name__ == '__main__':
+	Main()
