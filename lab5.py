@@ -10,9 +10,9 @@ GPIO.setup(led,GPIO.OUT)
 def Main():
 	while True:
 		for x in range(1,6):
-			GPIO.output(led,1)
+			GPIO.output(led,GPIO.HIGH)
 			time.sleep(0.5)
-			GPIO.output(led,0)
+			GPIO.output(led,GPIO.LOW)
 			time.sleep(0.5)
 
 if __name__ == '__main__':
