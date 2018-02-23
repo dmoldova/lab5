@@ -8,7 +8,7 @@ GPIO.setup(led,GPIO.OUT)
 
 #GPIO.setwarnings(False)
 def Main():
-	try:
+	#try:
 		GPIO.output(led,GPIO.HIGH)
 		time.sleep(2)		#while True:
 		#	for x in range(1,6):
