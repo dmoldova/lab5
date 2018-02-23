@@ -1,6 +1,6 @@
 import RPI.GPIO as GPIO
 import time
-GPIO.setmode(GRPIO.BOARD)
+GPIO.setmode(GPIO.BOARD)
 
 GPIO.setup(17, GPIO.OUT)
 
