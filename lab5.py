@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
 import time
-#from interruptingcow import timeout
 import Adafruit_MCP3008
 import Adafruit_GPIO.SPI as SPI
 
@@ -13,15 +12,9 @@ CLK = 11
 
 mcp = Adafruit_MCP3008.MCP3008(clk = CLK, cs = CS, miso = MISO, mosi = MOSI)
 
-#SPI_PORT = 0
-#SPI_DEVICE = 0
-#mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
-
 led = 17
 light_sensor = 0
 sound_sensor = 1
-
-#grovepi.pinMode(sound_sensor, "INPUT")
 
 GPIO.setup(light_sensor, GPIO.IN)
 GPIO.setup(sound_sensor, GPIO.IN)
@@ -40,7 +33,6 @@ def Main():
 
 		for x in range(0, 50):
 			light_value = mcp.read_adc(light_sensor)
-			#print(light_value)
 			if (light_value > light_threshold):
 				print(str(light_value) + " Bright")
 			else:
