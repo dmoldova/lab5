@@ -17,7 +17,7 @@ mcp = Adafruit_MCP3008.MCP3008(clk = CLK, cs = CS, miso = MISO, mosi = MOSI)
 #SPI_DEVICE = 0
 #mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 
-led = 11
+led = 17
 light_sensor = 0
 sound_sensor = 1
 
