@@ -36,7 +36,7 @@ def Main():
 
 		for x in range(0, 50):
 			light_value = mcp.read_adc(light_sensor)
-			if (light_value > light_threshold)
+			if (light_value > light_threshold):
 				print(str(light_value) + " Bright")
 			else:
 				print(str(light_value) + " Dark")
