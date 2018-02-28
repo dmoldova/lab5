@@ -1,21 +1,30 @@
 import RPi.GPIO as GPIO
 import time
 from interruptingcow import timeout
+import Adafruit_MCP3008
+import Adafruit_GPIO.SPI as SPI
 
 GPIO.setmode(GPIO.BOARD)
 
+CS = 8
+MISO = 9
+MOSI = 10
+CLK = 11
+
+mcp = Adafruit_MCP3008.MCP3008(clk = CLK, cs = CS, miso = MISO, mosi = MOSI)
+
 led = 11
-sound_sensor = 0
-light_sensor = #1??
+light_sensor = 0
+sound_sensor = 1
 
 #grovepi.pinMode(sound_sensor, "INPUT")
 
-GPIO.setup(sound_sensor, GPIO.IN)
+GPIO.setup(light_sensor, GPIO.IN)
 GPIO.setup(sound_sensor, GPIO.IN)
 GPIO.setup(led,GPIO.OUT)
 
-sound_threshold = 400 #change this
-light_threshold = #10??
+sound_threshold = 400
+light_threshold = 400
 
 def Main():
 	while True: #test suite
