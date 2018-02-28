@@ -6,16 +6,16 @@ import Adafruit_GPIO.SPI as SPI
 
 GPIO.setmode(GPIO.BCM)
 
-#CS = 8
-#MISO = 9
-#MOSI = 10
-#CLK = 11
+CS = 8
+MISO = 9
+MOSI = 10
+CLK = 11
 
-#mcp = Adafruit_MCP3008.MCP3008(clk = CLK, cs = CS, miso = MISO, mosi = MOSI)
+mcp = Adafruit_MCP3008.MCP3008(clk = CLK, cs = CS, miso = MISO, mosi = MOSI)
 
-SPI_PORT = 0
-SPI_DEVICE = 0
-mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
+#SPI_PORT = 0
+#SPI_DEVICE = 0
+#mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 
 led = 11
 light_sensor = 0
@@ -40,6 +40,7 @@ def Main():
 
 		for x in range(0, 50):
 			light_value = mcp.read_adc(light_sensor)
+			print(light_value)
 			if (light_value > light_threshold):
 				print(str(light_value) + " Bright")
 			else:
