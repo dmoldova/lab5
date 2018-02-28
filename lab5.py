@@ -32,7 +32,7 @@ light_threshold = 500
 
 def Main():
 	while True: #test suite
-		for x in range(0,5):
+		for x in range(1,6):
 			GPIO.output(led,GPIO.HIGH)
 			time.sleep(0.5)
 			GPIO.output(led,GPIO.LOW)
@@ -40,7 +40,7 @@ def Main():
 
 		for x in range(0, 50):
 			light_value = mcp.read_adc(light_sensor)
-			print(light_value)
+			#print(light_value)
 			if (light_value > light_threshold):
 				print(str(light_value) + " Bright")
 			else:
