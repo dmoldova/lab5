@@ -57,7 +57,9 @@ def Main():
 			sound_value = mcp.read_adc(sound_sensor)
 			print(sound_value)
 			if (sound_value > sound_threshold):
+				GPIO.output(led, GPIO.HIGH)
 				time.sleep(0.1)
+				GPIO.output(led, GPIO.LOW)
 			else:
 				time.sleep(0.1)
 
