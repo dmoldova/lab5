@@ -47,7 +47,7 @@ def Main():
 				print(str(light_value) + " Dark")
 			time.sleep(0.1)
 
-		for x in range(0,4):
+		for x in range(1,5):
 			GPIO.output(led,GPIO.HIGH)
 			time.sleep(0.2)
 			GPIO.output(led,GPIO.LOW)
@@ -61,7 +61,7 @@ def Main():
 			else:
 				time.sleep(0.1)
 
-		for x in range(0,4):
+		for x in range(1,5):
 			GPIO.output(led,GPIO.HIGH)
 			time.sleep(0.2)
 			GPIO.output(led,GPIO.LOW)
