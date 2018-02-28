@@ -58,10 +58,9 @@ def Main():
 			print(sound_value)
 			if (sound_value > sound_threshold):
 				GPIO.output(led, GPIO.HIGH)
-				time.sleep(0.1)
-				GPIO.output(led, GPIO.LOW)
 			else:
 				time.sleep(0.1)
+			GPIO.output(led, GPIO.LOW)
 
 		for x in range(1,5):
 			GPIO.output(led,GPIO.HIGH)
