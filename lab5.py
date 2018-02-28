@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-from interruptingcow import timeout
+#from interruptingcow import timeout
 import Adafruit_MCP3008
 import Adafruit_GPIO.SPI as SPI
 
@@ -23,52 +23,40 @@ GPIO.setup(light_sensor, GPIO.IN)
 GPIO.setup(sound_sensor, GPIO.IN)
 GPIO.setup(led,GPIO.OUT)
 
-sound_threshold = 400
-light_threshold = 400
+sound_threshold = 500
+light_threshold = 500
 
 def Main():
 	while True: #test suite
-		for x in range(1,6):
+		for x in range(0,5):
 			GPIO.output(led,GPIO.HIGH)
 			time.sleep(0.5)
 			GPIO.output(led,GPIO.LOW)
 			time.sleep(0.5)
 
-		try:
-			with timeout(5, exception=RuntimeError):
-				while True:
-					sound_value = grovepi.analogRead(light_sensor)
-					time.sleep(0.1)
-					resistance = (float)(1023 - sensor_value) * 10 / sensor_value
+		for x in range(0, 50):
+			light_value = mcp.read_adc(light_sensor)
+			if (light_value > light_threshold)
+				print(str(light_value) + " Bright")
+			else:
+				print(str(light_value) + " Dark")
+			time.sleep(0.1)
 
-					if resistance > light_threshold:
-						print("It is dark")
-					else:
-						print("It is light")
-		except RuntimeError:
-			pass
-
-		for x in range(1,5):
+		for x in range(0,4):
 			GPIO.output(led,GPIO.HIGH)
 			time.sleep(0.2)
 			GPIO.output(led,GPIO.LOW)
 			time.sleep(0.2)
 
-		try:
-			with timeout(5, exception=RuntimeError):
-				while True:
-					sensor_value = grovepi.analogRead(sound_sensor)
-					time.sleep(0.1)
-					if sensor_value > sound_threshold:
-						GPIO.output(led,1)
-						time.sleep(0.1)
-						GPIO.output(led,0)
-					else:
-						GPIO.output(led,0)
-		except RuntimeError:
-			pass
+		for x in range(0, 50):
+			sound_value = mcp.read_adc(sound_sensor)
+			print(sound_value)
+			if (sound_value > sound_threshold):
+				time.sleep(0.1)
+			else:
+				time.sleep(0.1)
 
-		for x in range(1,5):
+		for x in range(0,4):
 			GPIO.output(led,GPIO.HIGH)
 			time.sleep(0.2)
 			GPIO.output(led,GPIO.LOW)
