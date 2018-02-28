@@ -19,8 +19,8 @@ sound_sensor = 1
 
 #grovepi.pinMode(sound_sensor, "INPUT")
 
-GPIO.setup(light_sensor, GPIO.IN)
-GPIO.setup(sound_sensor, GPIO.IN)
+#GPIO.setup(light_sensor, GPIO.IN)
+#GPIO.setup(sound_sensor, GPIO.IN)
 GPIO.setup(led,GPIO.OUT)
 
 sound_threshold = 500
