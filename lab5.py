@@ -35,7 +35,7 @@ def Main():
 			time.sleep(0.5)
 
 		try:
-			with timeout(5, exception=RuntimeError)
+			with timeout(5, exception=RuntimeError):
 				while True:
 					sound_value = grovepi.analogRead(light_sensor)
 					time.sleep(0.1)
@@ -55,7 +55,7 @@ def Main():
 			time.sleep(0.2)
 
 		try:
-			with timeout(5, exception=RuntimeError)
+			with timeout(5, exception=RuntimeError):
 				while True:
 					sensor_value = grovepi.analogRead(sound_sensor)
 					time.sleep(0.1)
